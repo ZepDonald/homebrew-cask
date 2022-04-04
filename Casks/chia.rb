@@ -1,8 +1,15 @@
 cask "chia" do
-  version "1.3.0"
-  sha256 "9ab146c13d489352de27af4be35f3972de06b1c30ccecbcde40a7aba58a853bb"
+  version "1.3.3"
 
-  url "https://github.com/Chia-Network/chia-blockchain/releases/download/#{version}/Chia-#{version}.dmg",
+  arch = Hardware::CPU.intel? ? "" : "-arm64"
+
+  if Hardware::CPU.intel?
+    sha256 "ded52697dd8913de7634b7885841acdab7fcc18c4262339a861cbbf19444137b"
+  else
+    sha256 "70ab61c98692516678c6448c43bb83ea670b811b053c83a35d0120bac3f0e310"
+  end
+
+  url "https://github.com/Chia-Network/chia-blockchain/releases/download/#{version}/Chia-#{version}#{arch}.dmg",
       verified: "github.com/Chia-Network/chia-blockchain/"
   name "Chia Blockchain"
   desc "GUI Python implementation for the Chia blockchain"
