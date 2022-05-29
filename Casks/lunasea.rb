@@ -1,8 +1,8 @@
 cask "lunasea" do
-  version "10.0.1"
-  sha256 "8e563cef4b9cd594f9b0b95fdbf968dbb8161a36ac12ed257591bbf9e48d4408"
+  version "10.0.3"
+  sha256 "5cb8e07cb15497aac350363f0381091a9fd925b2c4cc0467f062e15f51f585ad"
 
-  url "https://github.com/JagandeepBrar/LunaSea/releases/download/v#{version}/LunaSea-macOS.zip",
+  url "https://github.com/JagandeepBrar/LunaSea/releases/download/v#{version}/lunasea-macos-amd64.zip",
       verified: "github.com/JagandeepBrar/LunaSea/"
   name "LunaSea"
   desc "Self-hosted controller built using the Flutter framework"

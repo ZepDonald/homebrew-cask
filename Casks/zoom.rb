@@ -1,12 +1,12 @@
 cask "zoom" do
   arch = Hardware::CPU.intel? ? "" : "arm64/"
 
-  version "5.10.1.5839"
+  version "5.10.6.7526"
 
   if Hardware::CPU.intel?
-    sha256 "037d473bc311e278d7aa0eae5de2d78e3eb97fa2a627c06bf913b5b8423203dd"
+    sha256 "e84eb3671e5e62461da7d5c2a727dedfc541c780d55f23bf063e0e47cea4c018"
   else
-    sha256 "38973a22e39d3a7c8d8ad4fee01b9591b962fe77a55f17ad83f098b56172e549"
+    sha256 "ecd82d6f58b7873f89bd10c2209c2d5374e8b89a4ee991fbee9f39ad20f30229"
   end
 
   url "https://cdn.zoom.us/prod/#{version}/#{arch}Zoom.pkg"
@@ -73,6 +73,7 @@ cask "zoom" do
     "~/Library/Preferences/us.zoom.Transcode.plist",
     "~/Library/Preferences/us.zoom.xos.Hotkey.plist",
     "~/Library/Preferences/us.zoom.xos.plist",
+    "~/Library/Preferences/us.zoom.ZoomAutoUpdater.plist",
     "~/Library/Preferences/ZoomChat.plist",
     "~/Library/Safari/PerSiteZoomPreferences.plist",
     "~/Library/SafariTechnologyPreview/PerSiteZoomPreferences.plist",

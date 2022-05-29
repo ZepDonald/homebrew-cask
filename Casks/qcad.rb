@@ -1,5 +1,5 @@
 cask "qcad" do
-  version "3.27.1"
+  version "3.27.6"
 
   if Hardware::CPU.intel?
     if MacOS.version <= :high_sierra
@@ -11,7 +11,7 @@ cask "qcad" do
         regex(/qcad[._-]v?(\d+(?:\.\d+)+)[._-]trial[._-]macos[._-]10\.10[._-]10\.13\.dmg/i)
       end
     else
-      sha256 "e9fd85ac2123c5e531f78e2c870b587d16a07ab6ef8e6a019c9b74115c9560d3"
+      sha256 "b3861329672b1a44d72de8fe02cc696a955dad6cd7c1cd18da9e064b7ef0f816"
       url "https://www.qcad.org/archives/qcad/qcad-#{version}-trial-macos-10.14-12.dmg"
 
       livecheck do
@@ -20,7 +20,7 @@ cask "qcad" do
       end
     end
   else
-    sha256 "8b74a4997f4c36e73ca88f15580183ce2a25cb48066763f9929174b4723a20fa"
+    sha256 "a49ffa3adf3087ad9ac59de7fc54c7ea5ef131d6ca2950265916bacc86d3c405"
     url "https://www.qcad.org/archives/qcad/qcad-#{version}-trial-macos-11-12-arm64.dmg"
 
     livecheck do

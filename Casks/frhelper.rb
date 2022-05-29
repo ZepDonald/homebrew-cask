@@ -1,6 +1,6 @@
 cask "frhelper" do
-  version "4.1.5,1065"
-  sha256 "b98002603091c30ff682b281a2e53a285f883e8bfc6648c1d28ffb6ea6740218"
+  version "4.2.1,1071"
+  sha256 "c54a3af2a3e234e1fbfc909413849ac26e1392079314509564143273ef970447"
 
   url "https://static.frdic.com/pkg/fhmac.dmg?v=#{version.csv.second}",
       verified:   "static.frdic.com/",

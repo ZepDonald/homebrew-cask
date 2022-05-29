@@ -1,6 +1,6 @@
 cask "azure-data-studio" do
-  version "1.35.1"
-  sha256 "d3dcd8b886d2cdfe8ea7f92b6c0a3d1a274d66be7c9469951676cf3f25b8df0d"
+  version "1.36.2"
+  sha256 "17577cbf4b947aaf1bd96beba7468c7e2ae9690b060430f705b2de30dae62a1b"
 
   url "https://azuredatastudio-update.azurewebsites.net/#{version}/darwin/stable",
       verified: "azuredatastudio-update.azurewebsites.net/"
@@ -10,7 +10,7 @@ cask "azure-data-studio" do
 
   livecheck do
     url "https://azuredatastudio-update.azurewebsites.net/api/update/darwin/stable/VERSION"
-    regex(/"productVersion"\s*:\s*"(\d+(:?\.\d+)+)"/)
+    regex(/"productVersion"\s*:\s*"(\d+(:?\.\d+)+)"/i)
   end
 
   auto_updates true

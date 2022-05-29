@@ -1,6 +1,6 @@
 cask "upwork" do
-  version "5.6.10.0,b124e6f3a4944b32"
-  sha256 "392f8d69c1ec780e90dcbbdcc9cf0e7284e73e43dc71f66a663d42d41e32da59"
+  version "5.6.10.13,3c485d1dd2af4f61"
+  sha256 "90e405f128e4edeccd2303310365712e48932a68b393c737908da44ddbd16927"
 
   url "https://upwork-usw2-desktopapp.upwork.com/binaries/v#{version.csv.first.dots_to_underscores}_#{version.csv.second}/Upwork.dmg"
   name "Upwork"

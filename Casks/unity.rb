@@ -1,12 +1,12 @@
 cask "unity" do
   arch = Hardware::CPU.intel? ? "" : "Arm64"
 
-  version "2021.2.18f1,0c6e675195cf"
+  version "2022.1.2f1,9427c1534183"
 
   if Hardware::CPU.intel?
-    sha256 "20b3b12ed7e6bc81d5c41d87db351a54a41f24aecf4eb0c9487604c97bba2e6a"
+    sha256 "8945c7ce7e034a9699a4b9da1ef7849c8ea54cbcf7ec5e4fcfe8ec384820faba"
   else
-    sha256 "6d8f3c6795cfce257ee7f16bcaf54b9bd892d5255418d0bd3710aeeed8f1db79"
+    sha256 "48c5083e8568b845690fb84425f95f283cef43fe5c42bea3b97bb6b6be994ac4"
   end
 
   url "https://download.unity3d.com/download_unity/#{version.csv.second}/MacEditorInstaller#{arch}/Unity-#{version.csv.first}.pkg",

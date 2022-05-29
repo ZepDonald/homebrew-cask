@@ -1,6 +1,6 @@
 cask "izotope-product-portal" do
-  version "1.4.3"
-  sha256 "7100915e6f8e48aae5d0b60d784d9bc90215c421827ab7ad26543e5900692ecd"
+  version "1.4.5"
+  sha256 "9f75e622671ce1ac7b5bc07fb3abd8de350fb0ed6ebc6ae02571756a5c5dfd98"
 
   url "https://s3.amazonaws.com/izotopedownloads/product_download/iZotope_Product_Portal_v#{version.dots_to_underscores}.dmg",
       verified: "https://s3.amazonaws.com/izotopedownloads/"

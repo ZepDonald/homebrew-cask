@@ -1,6 +1,6 @@
 cask "gemini" do
-  version "2.9.4,391,1645434880"
-  sha256 "de959eea69b5b3d7c05d4ab935f7ba155fa5c9ad18325570095ae6bc1f6c41ed"
+  version "2.9.6,393,1649689108"
+  sha256 "874706f6f5c3b5bf55c9047c46fb9442eae2acff61ce9bdae3cf7f418fab0ad0"
 
   url "https://dl.devmate.com/com.macpaw.site.Gemini#{version.major}/#{version.csv.second}/#{version.csv.third}/Gemini#{version.major}-#{version.csv.second}.zip",
       verified: "dl.devmate.com/com.macpaw.site.Gemini"
@@ -10,8 +10,12 @@ cask "gemini" do
 
   livecheck do
     url "https://updates.devmate.com/com.macpaw.site.Gemini#{version.major}.xml"
-    strategy :sparkle do |item|
-      "#{item.short_version},#{item.version},#{item.url[%r{/(\d+)/Gemini.*?\.zip}i, 1]}"
+    regex(%r{/(\d+)/Gemini\d*?[_-]v?(\d+(?:\.\d+)*)\.(?:dmg|zip)}i)
+    strategy :sparkle do |item, regex|
+      match = item.url.match(regex)
+      next if match.blank?
+
+      "#{item.short_version},#{match[2]},#{match[1]}"
     end
   end
 

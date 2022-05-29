@@ -1,15 +1,27 @@
 cask "dingtalk" do
-  version "6.5.0.6"
-  sha256 "b0e6de497260ab121b4a8bc372734395490c0223c08bb2b53fca0de32d11c1e5"
+  if Hardware::CPU.intel?
+    version "6.5.10.5"
+    sha256 "ba55e734fcddbd82e9cf210dc07b84965ef76b54476d191c94ebd1836d652aaa"
+    url "https://dtapp-pub.dingtalk.com/dingtalk-desktop/mac_dmg/Release/DingTalk_v#{version}.dmg"
+  else
+    version "6.5.12.2"
+    sha256 "ef9b1afdf2d564a074a1bd05a1dd50fb81710e5e1a71496c1bbf83f1276b1d6a"
+    url "https://dtapp-pub.dingtalk.com/dingtalk-desktop/mac_dmg/Release/M1-Beta/DingTalk-ARM64-#{version}.dmg"
+  end
 
-  url "https://dtapp-pub.dingtalk.com/dingtalk-desktop/mac_dmg/Release/DingTalk_v#{version}.dmg"
   name "DingTalk"
   name "钉钉"
   desc "Teamwork app by Alibaba Group"
   homepage "https://www.dingtalk.com/"
 
   livecheck do
-    url "https://www.dingtalk.com/mac/d/"
+    livecheck_url = if Hardware::CPU.intel?
+      "https://www.dingtalk.com/mac/d/"
+    else
+      "https://www.dingtalk.com/mac/d/qd=2022mac-m1"
+    end
+    url livecheck_url
+
     strategy :header_match
   end
 

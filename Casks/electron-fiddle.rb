@@ -1,12 +1,12 @@
 cask "electron-fiddle" do
   arch = Hardware::CPU.intel? ? "x64" : "arm64"
 
-  version "0.27.3"
+  version "0.29.0"
 
   if Hardware::CPU.intel?
-    sha256 "1ba3fff4c943b3d52bfe05634c793ca1f080140379a1eedf72217989cb677401"
+    sha256 "21f6adb4fef19d2e4d08231f15a01724dbf610f6558b04d41a9193f9b07fc172"
   else
-    sha256 "b52acc0c3320af542fb6c93fcd6aec615df6bda61010f4e91d23aac76e44d1dc"
+    sha256 "058dacb0eed6e76bdc05a4d903e415fae4f8ee963d671d60a0f330216ac16fe1"
   end
 
   url "https://github.com/electron/fiddle/releases/download/v#{version}/Electron.Fiddle-darwin-#{arch}-#{version}.zip",

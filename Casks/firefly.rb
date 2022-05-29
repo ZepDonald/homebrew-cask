@@ -1,6 +1,6 @@
 cask "firefly" do
-  version "1.3.3"
-  sha256 "4e70b37619f65069773828bf42e976d2cf6e094acfa9e18ae966599e5fa3bfd3"
+  version "1.6.0"
+  sha256 "c0b448d3f4fdca952d9b3bf813a6e54d769b5cf7c6f7654711b6d78a35588f0e"
 
   url "https://github.com/iotaledger/firefly/releases/download/desktop-#{version}/firefly-desktop-#{version}.dmg",
       verified: "github.com/iotaledger/firefly/"

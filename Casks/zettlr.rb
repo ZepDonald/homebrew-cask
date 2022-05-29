@@ -1,12 +1,12 @@
 cask "zettlr" do
   arch = Hardware::CPU.intel? ? "x64" : "arm64"
 
-  version "2.2.4"
+  version "2.2.6"
 
   if Hardware::CPU.intel?
-    sha256 "038456c50d511801d092dabf41003fc8fd94ec8dc0d3b3056f03215bcea7fc42"
+    sha256 "73e7f745c4cea796947a554986e1efe21b796948a60f894bd1c8ba99e460523e"
   else
-    sha256 "dcd9495e2643971368de4e032759827f96ff8d1442fc3781c9ac8325aaa6b790"
+    sha256 "f120e076c936b5ff6c8e699445a2a40c4c0314882da64a6c3f1fed9c29699caa"
   end
 
   url "https://github.com/Zettlr/Zettlr/releases/download/v#{version}/Zettlr-#{version}-#{arch}.dmg"

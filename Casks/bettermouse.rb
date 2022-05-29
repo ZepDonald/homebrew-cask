@@ -1,6 +1,6 @@
 cask "bettermouse" do
-  version "1.2.858"
-  sha256 "6a4bef1e80cd0e8e733f8976961e33c95da073376e554ab755d22ac67b513d56"
+  version "1.3.1991"
+  sha256 "438b48e00602efccbcff42ce90d8c8693e2b4b65c70de03a201d7852b5c70340"
 
   url "https://better-mouse.com/wp-content/uploads/BetterMouse.#{version}.zip"
   name "BetterMouse"
@@ -9,8 +9,7 @@ cask "bettermouse" do
 
   livecheck do
     url :homepage
-    strategy :page_match
-    regex(/Version (\d+(?:\.\d+)+)/)
+    regex(/Version (\d+(?:\.\d+)+)/i)
   end
 
   app "BetterMouse.app"

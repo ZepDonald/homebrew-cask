@@ -1,6 +1,6 @@
 cask "qqlive" do
-  version "2.35.0.53143"
-  sha256 "a02cb97afd794756746d2836cb66f1a43e6ea467925d29ff409df97b034a2b37"
+  version "2.39.0.53270"
+  sha256 "c57081ab0b362eb72615201bb77ad9410c31d2f2e75312a7cb8d9918bf65928b"
 
   url "https://dldir1.qq.com/qqtv/mac/QQLive_distribute_universal_#{version}.dmg"
   name "QQLive"

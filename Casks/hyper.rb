@@ -1,12 +1,12 @@
 cask "hyper" do
   arch = Hardware::CPU.intel? ? "x64" : "arm64"
 
-  version "3.2.1"
+  version "3.2.3"
 
   if Hardware::CPU.intel?
-    sha256 "0eaeda856760b945510231dd8d61d3750aa680bb1d0964d696c51d63885d1c80"
+    sha256 "08efdaf559d482441fb61557f4e2d0a406f9a96d5489692ebab5ab3fbf0f0915"
   else
-    sha256 "a2dc7d63dca0f647d1d3a69046b993383635e754e6c1e03e2332dd388ca501cd"
+    sha256 "90b9ce0bc19fa03d0cfec2ec00f2dd0d74eea3d0a91ab4285bcfd83cbeeefca4"
   end
 
   url "https://github.com/vercel/hyper/releases/download/v#{version}/Hyper-#{version}-mac-#{arch}.zip",

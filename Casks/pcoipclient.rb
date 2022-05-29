@@ -1,6 +1,6 @@
 cask "pcoipclient" do
-  version "22.01.2"
-  sha256 "e49852eb5f2f26a241c0438fd8971a6edcf314662c942e6f956aaee45653788e"
+  version "22.04.0"
+  sha256 "e2fe1df03e91ed4b5d14f81dcad7ea5e9b3ce303c3687d328a0237fc203ab002"
 
   url "https://dl.teradici.com/DeAdBCiUYInHcSTy/pcoip-client/raw/names/pcoip-client-dmg/versions/#{version}/pcoip-client_#{version}.dmg"
   name "Teradici PCoIP Software Client for macOS"
@@ -20,9 +20,9 @@ cask "pcoipclient" do
   ]
 
   zap trash: [
+    "~/Library/Preferences/com.teradici.PCoIP Client Connection Info.plist",
     "~/Library/Preferences/com.teradici.swiftclient.plist",
     "~/Library/Preferences/com.teradici.Teradici PCoIP Client.plist",
-    "~/Library/Preferences/com.teradici.PCoIP Client Connection Info.plist",
   ]
 
   caveats do

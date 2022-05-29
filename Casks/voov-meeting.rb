@@ -1,15 +1,16 @@
 cask "voov-meeting" do
   arch = Hardware::CPU.intel? ? "x86_64" : "arm64"
+  postarch = Hardware::CPU.intel? ? "mac" : "mac_arm64"
 
   if Hardware::CPU.intel?
-    version "3.3.2.510,1410000198,255661c36b01c1f58129754358b192ac"
-    sha256 "e33c32b2af728c3ac0277156ef75e781fcec48f7191dc93c81669cde9b13dd64"
+    version "3.7.0.590,be624b69a9db9410195acc9ec0686885"
+    sha256 "be5016805e02e668111d70ea84109cc5b2388cfd72f5236239ace4e8bc1ab1aa"
   else
-    version "3.3.3.520,1410000198,f58b838447dddaf1132601a05ba163bd"
-    sha256 "f91967906c4f7a57276a1e47110c0e4f2799f7f8738e16430ed79f002f3dccdd"
+    version "3.7.0.590,747ce62c8d3c838f84873c8570b5e9eb"
+    sha256 "6eb5c1984d991d361ba77d79ce741f1a0151c66d5918e415749cf4a2cb325d86"
   end
 
-  url "https://updatecdn.meeting.qq.com/#{version.csv.third}/VooVMeeting_#{version.csv.second}_#{version.csv.first}.publish.#{arch}.dmg",
+  url "https://updatecdn.meeting.qq.com/#{version.csv.second}/VooVMeeting_1410000198_#{version.csv.first}.publish.#{arch}.dmg",
       verified: "updatecdn.meeting.qq.com"
   name "VooV Meeting"
   name "Tencent Meeting International Version"
@@ -18,7 +19,13 @@ cask "voov-meeting" do
 
   # See https://github.com/Homebrew/homebrew-cask/pull/120458#issuecomment-1068393782
   livecheck do
-    skip "Only works with POST request"
+    url "https://bonjour.swoosh.run/post/https:voovmeeting.com/wemeet-webapi/v2/config/query-download-info?[{\"instance\":\"#{postarch}\",\"type\":\"1410000198\"}]"
+    strategy :page_match do |page|
+      match = page.match(/.*md5":"(.*?)".*version":"(.*?)"/i)
+      next if match.blank?
+
+      "#{match[2]},#{match[1]}"
+    end
   end
 
   app "VooV Meeting.app"
